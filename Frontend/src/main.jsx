@@ -12,10 +12,13 @@ import SupportPage from './landing_page/support/SupportPage.jsx'
 import Footer from './landing_page/Footer.jsx'
 import Navbar from './landing_page/Navbar.jsx'
 import NotFound from './landing_page/NotFound.jsx'
+import { CookiesProvider } from "react-cookie";
 
 createRoot(document.getElementById('root')).render(
-   <BrowserRouter>
+   <CookiesProvider>
+       <BrowserRouter>
    <Navbar/>
+   {/* <LoginHome /> */}
    <Routes>
     <Route path="/" element={<App/>}/>
     <Route path="/SignUp" element={<SignUp/>}/>
@@ -27,4 +30,6 @@ createRoot(document.getElementById('root')).render(
    </Routes>
    <Footer/>
    </BrowserRouter>
+   </CookiesProvider>
+  
 )
